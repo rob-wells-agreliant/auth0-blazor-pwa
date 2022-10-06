@@ -1,0 +1,32 @@
+﻿[
+  {
+    "acquireddate": "2022-09-06",
+    "durability": 1,
+    "summary": "Knight's Halberd",
+    "imageuri": "/images/weapons/BotW_Knights_Halberd_Icon.png"
+  },
+  {
+    "acquireddate": "2022-08-07",
+    "durability": 14,
+    "summary": "Master Sword",
+    "imageuri": "/images/weapons/BotW_Master_Sword_Icon.png"
+  },
+  {
+    "acquireddate": "2022-10-08",
+    "durability": -13,
+    "summary": "Torch",
+    "imageuri": "/images/weapons/BotW_Torch_Icon.png"
+  },
+  {
+    "acquireddate": "2022-08-09",
+    "durability": -16,
+    "summary": "Boomerang",
+    "imageuri": "/images/weapons/BotW_Boomerang_Icon.png"
+  },
+  {
+    "acquireddate": "2021-12-10",
+    "durability": -2,
+    "summary": "Boko Club",
+    "imageuri": "/images/weapons/HWAoC_Boko_Club_Icon.png"
+  }
+]

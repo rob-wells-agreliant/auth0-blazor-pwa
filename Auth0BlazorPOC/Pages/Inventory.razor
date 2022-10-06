@@ -1,0 +1,62 @@
+﻿@page "/inventory"
+@inject HttpClient Http
+@attribute [Authorize]
+
+<PageTitle>Auth0 POC: Inventory</PageTitle>
+
+<h1>Inventory</h1>
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (weaponlist == null)
+{
+    <p><em>be safe... while we get your weapons list</em></p>
+}
+else
+{
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Acquired</th>
+            <th>Durability</th>
+            <th>Strength</th>
+            <th>Summary</th>
+            <th><span class="oi oi-image" aria-hidden="true"></span></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var weapon in weaponlist)
+            {
+                <tr>
+                    <td>@weapon.AcquiredDate.ToShortDateString()</td>
+                    <td>@weapon.Durability</td>
+                    <td>@weapon.HitStrength</td>
+                    <td>@weapon.Summary</td>
+                    <td><img src="@weapon.ImageURI"></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeaponItem[]? weaponlist;
+
+    protected override async Task OnInitializedAsync()
+    {
+        weaponlist = await Http.GetFromJsonAsync<WeaponItem[]>("sample-data/weaponlist.json");
+    }
+
+    public class WeaponItem
+    {
+        public DateTime AcquiredDate { get; set; }
+
+        public int Durability { get; set; }
+
+        public string? Summary { get; set; }
+
+        public int HitStrength => 32 + (int)(Durability / 0.5556);
+
+        public string? ImageURI { get; set; }
+
+    }
+}

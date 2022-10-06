@@ -1,0 +1,19 @@
+﻿@page "/attack"
+@attribute [Authorize]
+<PageTitle>Auth0 POC: Attack</PageTitle>
+
+<h1>Attack</h1>
+
+<p role="status">Current hits: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount"><span class="oi oi-bolt" aria-hidden="true"></span>
+    Hit</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

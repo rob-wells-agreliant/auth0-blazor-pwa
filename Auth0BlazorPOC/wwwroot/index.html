@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Auth0 Blazor POC</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="Auth0BlazorPOC.styles.css" rel="stylesheet" />
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>function fadeGanon() { $("#ganon_error").fadeOut(4000); console.log("...muhahaha...") }
+        $(function () {
+            setTimeout(fadeGanon, 2000);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">It's dangerous to go alone, take this: &nbsp;&nbsp;&nbsp;<i><b>O%%]=======~</b></i> ...</div>
+
+    <div id="blazor-error-ui">
+        <span class="oi oi-circle-x" aria-hidden="true"></span> Oh no... you cannot do what you want your stamina is too
+        low
+        <a href="" class="reload">Rest up and try again</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
+
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+</body>
+
+</html>

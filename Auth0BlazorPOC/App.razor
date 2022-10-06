@@ -1,0 +1,24 @@
+﻿<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <Authorizing>
+                    <p>Scanning your sheikah slate, be patient...</p>
+                </Authorizing>
+                <NotAuthorized>
+                    <h1>Oh no...</h1>
+                    <p>You're not worthy enough to reach this item. You need to authenticate your sheikah slate.</p>
+                    <AccessControl />
+                </NotAuthorized>
+            </AuthorizeRouteView>
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Auth0 POC: Dead End</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p role="alert">Sorry! The prince of darkness, Ganon, seems to have stolen item at this location.</p>
+                <img id="ganon_error" src="ganon.png" />
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
