@@ -1,5 +1,4 @@
 name: Azure Static Web Apps CI/CD
-
 on:
   push:
     branches:
@@ -8,6 +7,10 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+
+defaults:
+  run:
+    working-directory: Auth0BlazorPOC
 
 jobs:
   build_and_deploy_job:
@@ -21,16 +24,12 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      working-directory: ./Auth0BlazorPOC
       run: dotnet restore
     - name: Build
-      working-directory: ./Auth0BlazorPOC
       run: dotnet build --no-restore
     - name: Publish with dotnet
-      working-directory: ./Auth0BlazorPOC
       run: dotnet publish --configuration Release --output build
     - name: Build And Deploy
-      working-directory: ./Auth0BlazorPOC
       id: builddeploy
       uses: Azure/static-web-apps-deploy@v1
       with:
