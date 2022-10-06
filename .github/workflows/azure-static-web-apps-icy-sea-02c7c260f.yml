@@ -21,11 +21,14 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
+      working-directory: ./Auth0BlazorPOC
       run: dotnet restore
     - name: Build
+      working-directory: ./Auth0BlazorPOC
       run: dotnet build --no-restore
     - name: Publish with dotnet
-      run: dotnet publish --configuration Release --output build
+      working-directory: ./Auth0BlazorPOC
+      run: dotnet publish --configuration Release --output /build
     - name: Build And Deploy
       id: builddeploy
       uses: Azure/static-web-apps-deploy@v1
